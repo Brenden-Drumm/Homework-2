@@ -26,8 +26,8 @@ struct Check{
 
 class Checkbook{
 public:
-    Checkbook():balance(0), numOfChecks(0){}
-    Checkbook(int initBal):balance(initBal), numOfChecks(0){}
+    Checkbook():balance(0), numOfChecks(0), checkBookSize(4){}
+    Checkbook(int initBal):balance(initBal), numOfChecks(0), checkBookSize(2){}
 
     void deposit(float depositAmount);
     void displayChecks();
@@ -37,7 +37,7 @@ private:
     float balance;
     float lastDeposit;
     int numOfChecks;
-    int checkLimit;
+    int checkBookSize;
 };
 
 void Checkbook::deposit(float depositAmount){
