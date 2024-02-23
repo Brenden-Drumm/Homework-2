@@ -29,6 +29,12 @@ public:
     Checkbook():balance(0), numOfChecks(0), checkBookSize(4){}
     Checkbook(int initBal):balance(initBal), numOfChecks(0), checkBookSize(2){}
 
+    float getBalance()const{return balance;}
+    float getLast()const{return lastDeposit;}
+    int getNumOfChecks()const{return numOfChecks;}
+    int getCheckBookSize()const{return checkBookSize;}
+
+
     void deposit(float depositAmount);
     void displayChecks();
     bool writeCheck(float amount);
@@ -68,10 +74,15 @@ bool Checkbook::writeCheck(float amount){
     }
 }
 
+ostream & operator<<(ostream &var, Check che)
+{
+    cout<<che.CheckNum<<" "<<che.CheckMemo<<" "<<che.CheckAmount<<endl;
+}
+
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    cout << "Hello world!!!!" << endl;
 
     Checkbook cheque(500);
     cheque.writeCheck(200);
